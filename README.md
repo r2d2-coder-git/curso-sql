@@ -1,6 +1,6 @@
 # **Curso de SQL desde Cero - 6 Horas** 🛢️
 
-<img src="imgs/sql.png/" alt="Descripción de la imagen" height=300 width="700">
+<img src="imgs/sql.png/" alt="Descripción de la imagen" height=200 width="500">
 
 ## **Descripción**
 
