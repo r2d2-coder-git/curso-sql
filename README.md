@@ -28,7 +28,7 @@ El curso está dividido en **6 módulos** teóricos y prácticos. Cada módulo i
    - Ordenación de datos con `ORDER BY`.
 
 4. **Operaciones con Múltiples Tablas (JOIN)**
-   - Relaciones entre tablas.
+   - Uso de subqueries.
    - Uso de `INNER JOIN`, `LEFT JOIN` y `RIGHT JOIN`.
 
 5. **Funciones Agregadas y Agrupamiento (GROUP BY)**
