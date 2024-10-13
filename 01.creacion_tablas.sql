@@ -15,7 +15,6 @@ CREATE TABLE clanes (
     id_clan INT PRIMARY KEY,
     nombre_clan VARCHAR(100),
     fecha_creacion DATE,
-    lider_id INT,  -- Jugador que lidera el clan
     FOREIGN KEY (lider_id) REFERENCES jugadores(id_jugador)
 );
 
