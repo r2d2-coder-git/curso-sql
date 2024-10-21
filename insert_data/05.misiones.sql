@@ -1,4 +1,4 @@
-INSERT INTO misiones (id_mision, nombre_mision, dificultad, recompensa_xp, recompensa_oro, recompensa_id, monstruo) VALUES
+INSERT INTO misiones (id_mision, nombre_mision, dificultad, recompensa_xp, recompensa_oro, recompensa_id, monstruo_id) VALUES
 (1, 'Defender la Fortaleza', 'Difícil', 1500, 200, 1, 1),
 (2, 'Cazar al Dragón Rojo', 'Muy Difícil', 3000, 500, 2, 2),
 (3, 'Rescate en la Montaña', 'Intermedio', 1200, 150, 3, 3),

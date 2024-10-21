@@ -1,4 +1,4 @@
-INSERT INTO equipamiento (id_equipamiento, nombre_equipamiento, tipo, nivel_requerido, bono_ataque, bono_defensa) VALUES
+INSERT INTO equipamientos (id_equipamiento, nombre_equipamiento, tipo, nivel_requerido, bono_ataque, bono_defensa) VALUES
 (1, 'Espada Cortante', 'arma', 1, 5, 0),
 (2, 'Escudo de Hierro', 'escudo', 1, 0, 3),
 (3, 'Armadura de Cuero', 'armadura', 2, 0, 4),
