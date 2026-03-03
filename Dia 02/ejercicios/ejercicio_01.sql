@@ -2,6 +2,8 @@
 -- EJERCICIO 1: Gestión de Productos de una Tienda
 -- =====================================================
 
+-- Asegurarse de usar el esquema dia02
+
 -- 1. Crea una tabla llamada "productos" con las siguientes columnas:
 --    - id_producto (entero, clave primaria, autoincremental)
 --    - nombre (texto de máximo 100 caracteres, no nulo)
@@ -33,11 +35,18 @@
 -- 7. Elimina los productos que tengan stock igual a 0
 
 
--- 8. Selecciona los 3 productos más caros (usa LIMIT y ORDER BY)
+-- 8. Elimina todos los productos de la marca "Corsair"
 
 
--- 9. Selecciona nombre como "producto" y precio como "coste_euros" 
---    de todos los productos
+-- 9. Elimina los productos cuyo precio sea mayor a 500 euros y devuelve
+--    los registros eliminados (usa RETURNING)
 
 
--- 10. Selecciona todos los productos cuyo nombre contenga la palabra "Mouse"
+-- 10. Selecciona 3 productos (LIMIT)
+
+
+-- 11. Selecciona nombre como "producto" y precio como "coste_euros" 
+--     de todos los productos
+
+
+-- 12. Selecciona todos los productos cuyo nombre contenga la palabra "Mouse"

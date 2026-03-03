@@ -2,15 +2,17 @@
 -- DATOS PARA EJERCICIOS DEL DÍA 6
 -- =====================================================
 
+-- Asegurarse de usar el esquema dia06
+
 -- EJERCICIO 1: Optimización de Base de Datos de Blog
-CREATE TABLE usuarios_blog (
+CREATE TABLE IF NOT EXISTS usuarios_blog (
     id_usuario SERIAL PRIMARY KEY,
     username VARCHAR(50) UNIQUE NOT NULL,
     email VARCHAR(100) UNIQUE NOT NULL,
     fecha_registro TIMESTAMP DEFAULT NOW()
 );
 
-CREATE TABLE articulos (
+CREATE TABLE IF NOT EXISTS articulos (
     id_articulo SERIAL PRIMARY KEY,
     titulo VARCHAR(200) NOT NULL,
     contenido TEXT,
@@ -45,13 +47,13 @@ INSERT INTO articulos (titulo, contenido, id_autor, fecha_publicacion, visitas) 
     ('Microservicios', 'Contenido del artículo...', 3, '2024-03-20 09:00:00', 1780);
 
 -- EJERCICIO 2: Sistema de Inventario Avanzado
-CREATE TABLE proveedores (
+CREATE TABLE IF NOT EXISTS proveedores (
     id_proveedor SERIAL PRIMARY KEY,
     nombre VARCHAR(100) NOT NULL,
     pais VARCHAR(50)
 );
 
-CREATE TABLE productos_inventario (
+CREATE TABLE IF NOT EXISTS productos_inventario (
     id_producto SERIAL PRIMARY KEY,
     nombre VARCHAR(100) NOT NULL,
     id_proveedor INTEGER,
@@ -62,7 +64,7 @@ CREATE TABLE productos_inventario (
     FOREIGN KEY (id_proveedor) REFERENCES proveedores(id_proveedor)
 );
 
-CREATE TABLE movimientos (
+CREATE TABLE IF NOT EXISTS movimientos (
     id_movimiento SERIAL PRIMARY KEY,
     id_producto INTEGER,
     tipo VARCHAR(10) CHECK (tipo IN ('ENTRADA', 'SALIDA')),

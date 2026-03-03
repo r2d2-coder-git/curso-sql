@@ -4,8 +4,10 @@
 -- Tema: Restaurante
 -- =====================================================
 
+-- Asegurarse de usar el esquema dia02
+
 -- Crear una tabla básica
-CREATE TABLE platos (
+CREATE TABLE IF NOT EXISTS dia02.platos (
     id_plato SERIAL PRIMARY KEY,
     nombre VARCHAR(100) NOT NULL,
     categoria VARCHAR(50),
@@ -14,39 +16,24 @@ CREATE TABLE platos (
 );
 
 -- Ver la estructura de la tabla creada
--- En psql: \d platos
+-- En psql: \d dia02.platos
 
--- Crear una tabla con más restricciones
-CREATE TABLE ingredientes (
-    id_ingrediente SERIAL PRIMARY KEY,
-    nombre VARCHAR(100) NOT NULL UNIQUE,
-    unidad_medida VARCHAR(20),
-    stock DECIMAL(8,2) CHECK (stock >= 0),
-    precio_unitario DECIMAL(6,2)
-);
-
--- Crear una tabla con clave foránea
-CREATE TABLE plato_ingredientes (
-    id_plato INTEGER,
-    id_ingrediente INTEGER,
-    cantidad DECIMAL(6,2),
-    PRIMARY KEY (id_plato, id_ingrediente),
-    FOREIGN KEY (id_plato) REFERENCES platos(id_plato),
-    FOREIGN KEY (id_ingrediente) REFERENCES ingredientes(id_ingrediente)
+-- Crear otra tabla independiente
+CREATE TABLE IF NOT EXISTS dia02.categorias (
+    id_categoria SERIAL PRIMARY KEY,
+    nombre VARCHAR(50) NOT NULL UNIQUE,
+    descripcion TEXT
 );
 
 -- ELIMINAR TABLAS (¡CUIDADO! Esto borra la tabla y todos sus datos)
 
--- Eliminar una tabla
--- DROP TABLE plato_ingredientes;
-
 -- Eliminar una tabla solo si existe
--- DROP TABLE IF EXISTS plato_ingredientes;
+DROP TABLE IF EXISTS dia02.categorias;
 
 -- Eliminar una tabla y todas las que dependen de ella
--- DROP TABLE platos CASCADE;
+DROP TABLE dia02.platos CASCADE;
 
--- Ver todas las tablas creadas
+-- Ver todas las tablas creadas en el esquema dia02
 SELECT table_name 
 FROM information_schema.tables 
-WHERE table_schema = 'public';
+WHERE table_schema = 'dia02';

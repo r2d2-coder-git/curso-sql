@@ -2,6 +2,8 @@
 -- EJERCICIO 2: Sistema de Gestión Universitaria
 -- =====================================================
 
+-- Asegurarse de usar el esquema dia05
+
 -- 1. Crea las siguientes tablas con sus relaciones:
 --
 --    Tabla "profesores":

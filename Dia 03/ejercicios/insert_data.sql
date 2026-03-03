@@ -2,8 +2,10 @@
 -- DATOS PARA EJERCICIOS DEL DÍA 3
 -- =====================================================
 
+-- Asegurarse de usar el esquema dia03
+
 -- EJERCICIO 1: Sistema de Gestión de Películas
-CREATE TABLE peliculas (
+CREATE TABLE IF NOT EXISTS peliculas (
     id_pelicula SERIAL PRIMARY KEY,
     titulo VARCHAR(150) NOT NULL,
     director VARCHAR(100),
@@ -27,7 +29,7 @@ INSERT INTO peliculas (titulo, director, genero, duracion_minutos, fecha_estreno
     ('Tár', 'Todd Field', 'Drama', 158, '2022-10-07', 7.4, NULL);
 
 -- EJERCICIO 2: Sistema de Registro de Estudiantes
-CREATE TABLE estudiantes (
+CREATE TABLE IF NOT EXISTS estudiantes (
     id_estudiante SERIAL PRIMARY KEY,
     nombre VARCHAR(100) NOT NULL,
     apellidos VARCHAR(100),

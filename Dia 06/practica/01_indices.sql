@@ -2,6 +2,8 @@
 -- PRÁCTICA: ÍNDICES
 -- =====================================================
 
+-- Asegurarse de usar el esquema dia06
+
 -- Ver índices existentes
 SELECT tablename, indexname, indexdef 
 FROM pg_indexes 

@@ -2,6 +2,8 @@
 -- PRÁCTICA: SUBCONSULTAS
 -- =====================================================
 
+-- Asegurarse de usar el esquema dia04
+
 -- Crear tablas de ejemplo
 CREATE TABLE IF NOT EXISTS artistas (
     id_artista SERIAL PRIMARY KEY,

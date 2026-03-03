@@ -2,15 +2,17 @@
 -- DATOS PARA EJERCICIOS DEL DÍA 4
 -- =====================================================
 
+-- Asegurarse de usar el esquema dia04
+
 -- EJERCICIO 1: Sistema de Ventas Online
-CREATE TABLE clientes (
+CREATE TABLE IF NOT EXISTS clientes (
     id_cliente SERIAL PRIMARY KEY,
     nombre VARCHAR(100),
     ciudad VARCHAR(50),
     pais VARCHAR(50)
 );
 
-CREATE TABLE pedidos (
+CREATE TABLE IF NOT EXISTS pedidos (
     id_pedido SERIAL PRIMARY KEY,
     id_cliente INTEGER,
     fecha_pedido DATE,
@@ -39,13 +41,13 @@ INSERT INTO pedidos (id_cliente, fecha_pedido, total, estado) VALUES
     (3, '2024-02-22', 210.00, 'Entregado');
 
 -- EJERCICIO 2: Análisis de Rendimiento de Empleados
-CREATE TABLE departamentos (
+CREATE TABLE IF NOT EXISTS departamentos (
     id_departamento SERIAL PRIMARY KEY,
     nombre_departamento VARCHAR(50),
     presupuesto DECIMAL(10,2)
 );
 
-CREATE TABLE empleados_ventas (
+CREATE TABLE IF NOT EXISTS empleados_ventas (
     id_empleado SERIAL PRIMARY KEY,
     nombre VARCHAR(100),
     id_departamento INTEGER,

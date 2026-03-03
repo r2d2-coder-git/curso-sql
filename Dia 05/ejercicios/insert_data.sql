@@ -2,14 +2,16 @@
 -- DATOS PARA EJERCICIOS DEL DÍA 5
 -- =====================================================
 
+-- Asegurarse de usar el esquema dia05
+
 -- EJERCICIO 1: Sistema de Biblioteca
-CREATE TABLE autores (
+CREATE TABLE IF NOT EXISTS autores (
     id_autor SERIAL PRIMARY KEY,
     nombre VARCHAR(100) NOT NULL,
     nacionalidad VARCHAR(50)
 );
 
-CREATE TABLE libros (
+CREATE TABLE IF NOT EXISTS libros (
     id_libro SERIAL PRIMARY KEY,
     titulo VARCHAR(150) NOT NULL,
     id_autor INTEGER,
@@ -18,14 +20,14 @@ CREATE TABLE libros (
     FOREIGN KEY (id_autor) REFERENCES autores(id_autor)
 );
 
-CREATE TABLE socios (
+CREATE TABLE IF NOT EXISTS socios (
     id_socio SERIAL PRIMARY KEY,
     nombre VARCHAR(100) NOT NULL,
     email VARCHAR(100) UNIQUE,
     fecha_registro DATE
 );
 
-CREATE TABLE prestamos (
+CREATE TABLE IF NOT EXISTS prestamos (
     id_prestamo SERIAL PRIMARY KEY,
     id_libro INTEGER,
     id_socio INTEGER,
@@ -67,14 +69,14 @@ INSERT INTO prestamos (id_libro, id_socio, fecha_prestamo, fecha_devolucion) VAL
     (4, 2, '2024-02-15', '2024-03-01');
 
 -- EJERCICIO 2: Sistema Universitario
-CREATE TABLE profesores (
+CREATE TABLE IF NOT EXISTS profesores (
     id_profesor SERIAL PRIMARY KEY,
     nombre VARCHAR(100) NOT NULL,
     departamento VARCHAR(50),
     email VARCHAR(100) UNIQUE
 );
 
-CREATE TABLE asignaturas (
+CREATE TABLE IF NOT EXISTS asignaturas (
     id_asignatura SERIAL PRIMARY KEY,
     nombre VARCHAR(100) NOT NULL,
     creditos INTEGER,
@@ -82,14 +84,14 @@ CREATE TABLE asignaturas (
     FOREIGN KEY (id_profesor) REFERENCES profesores(id_profesor)
 );
 
-CREATE TABLE estudiantes (
+CREATE TABLE IF NOT EXISTS estudiantes (
     id_estudiante SERIAL PRIMARY KEY,
     nombre VARCHAR(100) NOT NULL,
     carrera VARCHAR(100),
     año_ingreso INTEGER
 );
 
-CREATE TABLE matriculas (
+CREATE TABLE IF NOT EXISTS matriculas (
     id_matricula SERIAL PRIMARY KEY,
     id_estudiante INTEGER,
     id_asignatura INTEGER,

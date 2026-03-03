@@ -2,6 +2,8 @@
 -- EJERCICIO 1: Sistema de Gestión de Películas
 -- =====================================================
 
+-- Asegurarse de usar el esquema dia03
+
 -- 1. Crea una tabla "peliculas" con las siguientes columnas:
 --    - id_pelicula (entero, clave primaria, autoincremental)
 --    - titulo (texto de máximo 150 caracteres, no nulo)

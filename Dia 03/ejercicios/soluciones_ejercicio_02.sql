@@ -3,7 +3,7 @@
 -- =====================================================
 
 -- 1. Crear tabla estudiantes
-CREATE TABLE estudiantes (
+CREATE TABLE dia03.estudiantes (
     id_estudiante SERIAL PRIMARY KEY,
     nombre VARCHAR(100) NOT NULL,
     apellidos VARCHAR(100),
@@ -22,7 +22,7 @@ SELECT
     fecha_ingreso,
     EXTRACT(YEAR FROM fecha_ingreso) AS año_ingreso,
     EXTRACT(MONTH FROM fecha_ingreso) AS mes_ingreso
-FROM estudiantes;
+FROM dia03.estudiantes;
 
 -- 4. Clasificar por nota media
 SELECT 
@@ -36,11 +36,11 @@ SELECT
         WHEN nota_media < 5.0 THEN 'Suspenso'
         ELSE 'Sin calificar'
     END AS clasificacion
-FROM estudiantes;
+FROM dia03.estudiantes;
 
 -- 5. Contar estudiantes por carrera
 SELECT carrera, COUNT(*) AS total_estudiantes
-FROM estudiantes
+FROM dia03.estudiantes
 GROUP BY carrera
 ORDER BY total_estudiantes DESC;
 
@@ -49,26 +49,26 @@ SELECT
     carrera,
     ROUND(AVG(nota_media), 2) AS nota_media_carrera,
     COUNT(*) AS total_estudiantes
-FROM estudiantes
+FROM dia03.estudiantes
 WHERE nota_media IS NOT NULL
 GROUP BY carrera
 HAVING AVG(nota_media) > 7.0;
 
 -- 7. Estudiante con más créditos
 SELECT nombre, apellidos, creditos_completados
-FROM estudiantes
-WHERE creditos_completados = (SELECT MAX(creditos_completados) FROM estudiantes);
+FROM dia03.estudiantes
+WHERE creditos_completados = (SELECT MAX(creditos_completados) FROM dia03.estudiantes);
 
 -- 8. Longitud del nombre completo
 SELECT 
     nombre,
     apellidos,
     LENGTH(nombre || ' ' || apellidos) AS longitud_nombre_completo
-FROM estudiantes
+FROM dia03.estudiantes
 ORDER BY longitud_nombre_completo DESC;
 
 -- 9. Carreras únicas
-SELECT DISTINCT carrera FROM estudiantes ORDER BY carrera;
+SELECT DISTINCT carrera FROM dia03.estudiantes ORDER BY carrera;
 
 -- 10. Estudiantes sin nota media
 SELECT 
@@ -76,5 +76,5 @@ SELECT
     apellidos,
     carrera,
     COALESCE(CAST(nota_media AS VARCHAR), 'Pendiente de evaluación') AS nota
-FROM estudiantes
+FROM dia03.estudiantes
 WHERE nota_media IS NULL;

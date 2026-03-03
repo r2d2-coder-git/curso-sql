@@ -3,26 +3,28 @@
 -- ALIAS (AS)
 -- =====================================================
 
+-- Asegurarse de usar el esquema dia02
+
 -- Alias para columnas con AS
 SELECT 
     nombre AS plato,
     precio AS coste,
     categoria AS tipo
-FROM platos;
+FROM dia02.platos;
 
 -- Alias para columnas sin AS (también válido)
 SELECT 
     nombre plato_del_dia,
     precio euros,
     disponible en_carta
-FROM platos;
+FROM dia02.platos;
 
 -- Alias con espacios (usar comillas dobles)
 SELECT 
     nombre AS "Nombre del Plato",
     precio AS "Precio en €",
     categoria AS "Categoría"
-FROM platos;
+FROM dia02.platos;
 
 -- Alias para cálculos
 SELECT 
@@ -30,31 +32,23 @@ SELECT
     precio AS precio_original,
     precio * 1.21 AS precio_con_iva,
     precio * 0.9 AS precio_descuento
-FROM platos;
+FROM dia02.platos;
 
 -- Alias para concatenaciones
 SELECT 
     nombre || ' (' || categoria || ')' AS descripcion_completa,
     precio AS precio_euros
-FROM platos;
+FROM dia02.platos;
 
 -- Alias para tablas
 SELECT p.nombre, p.precio, p.categoria
-FROM platos AS p
+FROM dia02.platos AS p
 WHERE p.disponible = true;
 
 -- Alias para tablas sin AS
 SELECT p.nombre, p.precio
-FROM platos p
+FROM dia02.platos p
 WHERE p.precio > 10;
-
--- Alias útiles en JOINs (veremos más adelante)
-SELECT 
-    p.nombre AS plato,
-    p.precio,
-    c.nombre AS categoria_nombre
-FROM platos p
-JOIN categorias c ON p.categoria = c.nombre;
 
 -- Alias con funciones agregadas
 SELECT 
@@ -63,7 +57,7 @@ SELECT
     AVG(precio) AS precio_promedio,
     MAX(precio) AS precio_maximo,
     MIN(precio) AS precio_minimo
-FROM platos
+FROM dia02.platos
 GROUP BY categoria;
 
 -- Buenas prácticas con alias:

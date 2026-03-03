@@ -2,8 +2,10 @@
 -- PRÁCTICA: PRIMARY KEY y FOREIGN KEY
 -- =====================================================
 
+-- Asegurarse de usar el esquema dia05
+
 -- PRIMARY KEY: Identifica únicamente cada registro
-CREATE TABLE hoteles (
+CREATE TABLE IF NOT EXISTS hoteles (
     id_hotel SERIAL PRIMARY KEY,  -- Clave primaria autoincremental
     nombre VARCHAR(100) NOT NULL,
     ciudad VARCHAR(50),

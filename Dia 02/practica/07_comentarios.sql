@@ -2,11 +2,13 @@
 -- PRÁCTICA: Cómo ponemos comentarios en SQL
 -- =====================================================
 
+-- Asegurarse de usar el esquema dia02
+
 -- Este es un comentario de una sola línea
 -- Los comentarios ayudan a explicar el código
 
 -- Seleccionar todos los platos disponibles
-SELECT * FROM platos WHERE disponible = true;
+SELECT * FROM dia02.platos WHERE disponible = true;
 
 /*
 Este es un comentario
@@ -15,7 +17,7 @@ de múltiples líneas.
 o para desactivar bloques de código.
 */
 
-SELECT nombre, precio FROM platos; -- Comentario al final de la línea
+SELECT nombre, precio FROM dia02.platos; -- Comentario al final de la línea
 
 /*
 Los comentarios son importantes porque:
@@ -26,11 +28,11 @@ Los comentarios son importantes porque:
 */
 
 -- Ejemplo de código comentado (no se ejecuta):
--- DELETE FROM platos WHERE precio > 100;
+-- DELETE FROM dia02.platos WHERE precio > 100;
 
 /* 
 Comentario de bloque para desactivar código:
-UPDATE platos 
+UPDATE dia02.platos 
 SET precio = precio * 2 
 WHERE categoria = 'Carnes';
 */
@@ -43,10 +45,10 @@ WHERE categoria = 'Carnes';
 
 -- Ejemplo de comentario útil:
 -- Aplicamos descuento del 15% a entrantes para promoción de verano
-UPDATE platos 
+UPDATE dia02.platos 
 SET precio = precio * 0.85 
 WHERE categoria = 'Entrantes';
 
 -- Ejemplo de comentario innecesario:
 -- Selecciona el nombre de la tabla platos
-SELECT nombre FROM platos;
+SELECT nombre FROM dia02.platos;

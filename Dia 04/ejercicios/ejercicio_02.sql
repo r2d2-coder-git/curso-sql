@@ -2,6 +2,8 @@
 -- EJERCICIO 2: Análisis de Rendimiento de Empleados
 -- =====================================================
 
+-- Asegurarse de usar el esquema dia04
+
 -- 1. Crea las siguientes tablas:
 --    
 --    Tabla "departamentos":

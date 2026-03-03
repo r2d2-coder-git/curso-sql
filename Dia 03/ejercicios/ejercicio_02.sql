@@ -2,6 +2,8 @@
 -- EJERCICIO 2: Sistema de Registro de Estudiantes
 -- =====================================================
 
+-- Asegurarse de usar el esquema dia03
+
 -- 1. Crea una tabla "estudiantes" con las siguientes columnas:
 --    - id_estudiante (entero, clave primaria, autoincremental)
 --    - nombre (texto de máximo 100 caracteres, no nulo)

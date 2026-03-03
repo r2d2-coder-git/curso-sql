@@ -2,6 +2,8 @@
 -- EJERCICIO 1: Sistema de Ventas Online
 -- =====================================================
 
+-- Asegurarse de usar el esquema dia04
+
 -- 1. Crea las siguientes tablas:
 --    
 --    Tabla "clientes":

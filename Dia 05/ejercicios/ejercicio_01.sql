@@ -2,6 +2,8 @@
 -- EJERCICIO 1: Sistema de Biblioteca
 -- =====================================================
 
+-- Asegurarse de usar el esquema dia05
+
 -- 1. Crea las siguientes tablas con sus relaciones:
 --
 --    Tabla "autores":

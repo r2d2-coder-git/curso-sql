@@ -2,6 +2,8 @@
 -- EJERCICIO 1: Optimización de Base de Datos de Blog
 -- =====================================================
 
+-- Asegurarse de usar el esquema dia06
+
 -- 1. Crea las siguientes tablas:
 --    
 --    Tabla "usuarios_blog":

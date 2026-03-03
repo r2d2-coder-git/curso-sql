@@ -2,6 +2,8 @@
 -- EJERCICIO 2: Sistema de Inventario Avanzado
 -- =====================================================
 
+-- Asegurarse de usar el esquema dia06
+
 -- 1. Crea las siguientes tablas:
 --    
 --    Tabla "proveedores":

@@ -3,6 +3,8 @@
 -- NOW, CURRENT_DATE, CURRENT_TIME, EXTRACT
 -- =====================================================
 
+-- Asegurarse de usar el esquema dia03
+
 -- Crear tabla de ejemplo
 CREATE TABLE IF NOT EXISTS videojuegos (
     id_juego SERIAL PRIMARY KEY,

@@ -2,6 +2,8 @@
 -- EJERCICIO 2: Sistema de Gestión de Empleados
 -- =====================================================
 
+-- Asegurarse de usar el esquema dia02
+
 -- 1. Crea una tabla llamada "empleados" con las siguientes columnas:
 --    - id_empleado (entero, clave primaria, autoincremental)
 --    - nombre_completo (texto de máximo 150 caracteres, no nulo)
@@ -37,10 +39,17 @@
 -- 8. Actualiza el estado "activo" a true para "Isabel Romero Díaz"
 
 
--- 9. Selecciona los 2 empleados con mayor salario
+-- 9. Elimina los empleados que tengan activo = false
 
 
--- 10. Añade un comentario explicando qué hace la siguiente consulta:
+-- 10. Elimina todos los empleados del departamento "Recursos Humanos"
+--     y devuelve los registros eliminados (usa RETURNING)
+
+
+-- 11. Selecciona 2 empleados (LIMIT)
+
+
+-- 12. Añade un comentario explicando qué hace la siguiente consulta:
 
 SELECT nombre_completo AS empleado, departamento AS area
 FROM empleados
